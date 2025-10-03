@@ -7,9 +7,10 @@ public class LoopPractise {
        // printNums();
       // reverseString();
        // readNameScanner();
-        reverseWithScanner();
+       // reverseWithScanner();
        // multiplicationTable();
        // sumOfFirstNumbers();
+        primeNums();
     }
 
     //Write a program that prints the numbers from 1 to 10 using a for loop
@@ -17,6 +18,7 @@ public class LoopPractise {
             for (int i = 1; i <= 10; i++) {
                 System.out.println(i);
             }
+
         }
 
 /**
@@ -84,6 +86,25 @@ public static void multiplicationTable(){
     }
 
     sc.close();
+}
+
+public static void primeNums() {
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a number");
+    int num = sc.nextInt();
+
+    for (int i = 2; i <= num; i++) {
+        int n;
+        for (n = 2; n < i; n++) {
+            if (i % n == 0) {
+                System.out.println(i + " is NOT a prime number");
+                break;
+            }}
+        if (n == i) {
+            System.out.println(i + " is a prime number");
+        }
+    }
 }
 
 public static void readNameScanner(){

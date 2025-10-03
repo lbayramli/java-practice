@@ -7,7 +7,7 @@ public class ArrayPractise {
 
         public static void main(String[] args) {
 
-          //  sumElements();
+           // sumElements();
            // maxElement();
             //evenOddNums();
             //reverseArray();
