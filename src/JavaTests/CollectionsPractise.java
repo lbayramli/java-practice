@@ -9,7 +9,12 @@ public class CollectionsPractise {
        // favoriteNums();
        // uniqeWords();
        // studentGrades();
-       wordFreq();
+      // wordFreq();
+       // groceryCom();
+       // uniqueFavorites();
+        usernameRegistry();
+        //nameScore();
+        //wordFrequency();
     }
     /**
      * Beginner (List)
@@ -121,12 +126,120 @@ public static void studentGrades(){
     }
 
 
+/*
+Grocery Commands
+Start with an empty list of items. Process commands from input: - ADD <item> - REMOVE <item> -
+ PRINT should output all items in the order they were added, separated by commas.
+ If REMOVE targets something not present, ignore it.
+Example Input: ADD milk ADD eggs ADD bread REMOVE eggs PRINT Expected Output: milk,bread
+ */
+
+    public static void groceryCom() {
+        List<String> groceryList = new ArrayList<>();
+        groceryList.add("Add milk");
+        groceryList.add("Print");
+        groceryList.add("Add eggs");
+        groceryList.add("Add bread");
+        groceryList.add("Remove eggs");
+        groceryList.add("Print");
+
+
+        List<String> groceries = new ArrayList<>();
+
+        for (String words : groceryList) {
+            if (words.toLowerCase().startsWith("add")) {
+                String item = words.substring(4);
+                groceries.add(item);
+            }
+            else if (words.toLowerCase().startsWith("remove")) {
+                String item = words.substring(7);
+                groceries.remove(item);
+            }
+            else if (words.equalsIgnoreCase("print")) {
+                System.out.println(String.join(",", groceries));}
+        }
+    }
+
+public static void uniqueFavorites(){
+
+    List<String> listOfWords = Arrays.asList("Java", "spring", "JAVA", "arrays", "END");
+    Set<String> uniques = new TreeSet<>();
+    for (String words : listOfWords) {
+        if (words.equalsIgnoreCase("END")) {
+            break;
+        }
+        uniques.add(words.toLowerCase());
+    }
+    System.out.println(uniques);
+    System.out.println(uniques.size());
+}
+
+
+public static void usernameRegistry(){
+List<String> usernames = Arrays.asList("paola", "ana","paola","zane","END");
+   // System.out.println(usernames);
+    Set<String> uniqueUsernames = new LinkedHashSet<>(); //LinKedHashSet order insertion // TreeSet- it will sort
+    for (String names : usernames){
+        if(names.equalsIgnoreCase("End")){
+            break;
+
+        }
+            uniqueUsernames.add(names);
+
+    }
+    List<String> sortedNames = new ArrayList<>(uniqueUsernames);
+    Collections.sort(sortedNames);
+    System.out.println(sortedNames);
+    System.out.println(sortedNames.size());
+}
 
 
 
 
+/*
+Example Input:
+3
+Alice 80
+Bob 90
+Alice 95
+2
+Alice
+Eve
+
+Expected Output:
+Alice: 95
+Not found
+
+ */
+public static void nameScore(){
+
+//    Map<String, Integer> nameScore = new HashMap<>();
+//    nameScore.put("Alice", 80);
+//    nameScore.put("Bob", 90);
+//    nameScore.put("Alice", 95);
+
+    Map<String, Integer> map = new HashMap<>();
 
 
+    map.put("Alice", 80);
+    map.put("Bob", 90);
+    map.put("Alice", 95);
+
+    List<String> listOfNames = List.of("Alice", "Eve");
+
+
+}
+
+
+
+//public static void wordFrequency(){
+//    String textLine = "Cat dog, cat! Bird? DOG dog.";
+//    //String[] words = textLine.toLowerCase().split("[^a-z]+");
+//    String[] words = textLine.toLowerCase().split("[ ,.!?]+");
+//    System.out.println(words);
+//
+//
+//}
 
 
 
